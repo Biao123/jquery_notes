@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_编写选项卡</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+#div1 div{ width: 200px;height: 200px; border: 1px red solid; display: none; }
+.active{background:red; }
+</style>
+<script type="text/javascript">
+// window.onload = function(){
+// 	var div = document.getElementById('div1');
+// 	var input= div.getElementsByTagName('input');
+// 	var div2 =div.getElementsByTagName('div');
+// 	for (var i = input.length - 1; i >= 0; i--) {
+// 		input[i].index=i;
+// 		input[i].onclick = function(){
+// 			for (var i = input.length - 1; i >= 0; i--) {
+// 				input[i].className = "";
+// 				div2[i].style.display='none';
+// 			}
+
+// 			this.className ='active';
+// 			div2[this.index].style.display='block';
+// 		}
+// 	}
+// }
+$(function(){
+	$('#div1').find('input').click(function(){
+		$('#div1').find('input').attr('class',' ');
+		$('#div1').find('div').css('display','none');
+		$(this).attr('class','active');
+		$('#div1').find('div').eq( $(this).index() ).css('display','block');
+	})
+})
+
+</script>
+<body>
+<div id="div1">
+	<input type="button" name="" value="1" class="active">
+	<input type="button" name="" value="2">
+	<input type="button" name="" value="3">
+	<div style="display: block;">11111</div>
+	<div>22222</div>
+	<div>33333</div>
+</div>
+	
+</body>
+</html>

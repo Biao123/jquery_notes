@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_demo1</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<script type="text/javascript">
+/*方法函数化*/
+// window.onload = function(){};
+// $();
+// innerHTML=123;
+// html(123);
+// onclick(function(){})
+// click();
+
+
+
+
+ // window.onload = function(){
+ // 	var div = document.getElementById('div1');
+ // 	div.onclick=function(){
+ // 		alert(this.innerHTML);
+ // 	}
+ // }
+
+
+
+ $(function(){
+ 	var div = $("#div1");
+ 	div.click( function( ) {
+ 		alert($( this ).html() )
+ 	} )
+ } )
+</script>
+<body>
+<div id="div1">div</div>
+	
+</body>
+</html>

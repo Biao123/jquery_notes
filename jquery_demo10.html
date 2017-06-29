@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery方法</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+#div1{width: 100px;height: 100px;background: yellow;}
+
+
+</style>
+<script type="text/javascript">
+$(function(){
+	//get();把jqeury转化成原生的JS
+	aleryt($('#div1').get(0).innerHTML);
+	for (var i = 0; i < $("li").get().length; i++) {
+		$("li").get(i).style.background='red';
+		$("li")[i].style.background='red';//第二种写法
+	}
+	//outWidth();获取元素的宽   包括隐藏元素
+	//offsetWidth:获取元素的宽  但获取不到隐藏元素的值  原生
+	//text();获取文本  不会获取到标签  获取到一组当中的所有文本内容
+	//html();获取到第一个标签的 所有内容  如果是赋值  则赋值左右标签
+	//remove();删除
+	//detach():删除  但是会保留删除之前元素的所有操作行为
+	//$(function(){}):  等DOM加载完就可以执行  速度比原生的快  
+	//$(document).ready(function(){})  :等同于上面
+	//parents();获取当前元素所有的祖先节点 参数就是筛选功能
+	//closest();获取最近的指定的祖先节点   包括当前元素自身 必须要写筛选的参数  只能找到一个元素
+	//siblings():获取当前元素的兄弟节点 不包括自身 可以写个参数进行筛选
+	//nextAll();下面的兄弟节点
+	//prevAll:上面的兄弟节点
+	//nextUntil():下面的兄弟节点  截止到某个节点
+	//parentUntil  prevUntil
+	//clone():将节点进行复制操作  可以接受一个参数  作用可以复制之前的操作行为 参数为true
+	$('div1').clone().appendTo( $('span') );
+	//wrap():包裹
+	$('span').wrap('<div>');//给每个span 包裹一个div标签
+	//wrapAll:整体包装  //将所有span用一个div包装 如果有其他标签 会被方法移出去
+	//wrapInner();内部包装
+	//unwrap();删除父级  不包括body元素
+	//add(): 添加
+	//slice():
+	$('li').slice(1,4).css("","");// slice():筛选 选择
+	//   serialize():数据串联化
+	$('from').serialize();// string:a=1&b=2&c=3
+	// serializeArray(): 串联成json的形式
+
+
+})
+</script>
+<body>
+<div id="div1">div</div>
+<div id="div2"></div>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<form>
+<input type="text" name="a" value="1">
+<input type="text" name="b" value="2">
+<input type="text" name="c" value="3">
+</form>
+	
+
+</body>
+</html>

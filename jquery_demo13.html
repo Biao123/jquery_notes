@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery方法</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+#div1{width: 100px;height: 100px;background: yellow;}
+
+
+</style>
+<script type="text/javascript">
+// $().css()  $().html()  $().val()  :只能给jquery对象用
+// $.xxx()                                 :不仅可以给JQ用  也能给JS用 叫工具方法
+
+//$.type();判断类型
+//$.trim():去空格
+//$.inArray():类似于 indexOf
+//$.proxy():改变this指向
+//
+
+
+//noConflict();防止冲突
+//parseJSON:将字符串解析成json 要严格模式
+//makeArray :将类数组转化成数组
+$(function(){
+	var a ="hello";
+	alert($.tpye(a)) ;
+
+	var str = "  hello    ";
+	alert(' ( '+$.trim(str)') ');
+
+	var arr = ['a','b','c'];
+	alert( $.inArray('b',arr)) //找到b在arr里的位置  没有则是-1
+
+	function show(n1,n2){
+		alert(n1);
+		alert(n2);
+		alert(this);
+	}
+	//show();
+	$.proxy(show,document)(3,4);
+	//$proxy(show,document,3,4)();
+	//$proxy(show,document,3)(4);跟上面都一样
+	//
+
+	var miaov = $.noConflict();
+
+	var $ = 10;
+	miaov(function(){
+		miaov.('body').css("","")
+	})
+
+	var str ='{"name":"hello"}';
+	alert($.parseJSON(str).name);
+
+});
+</script>
+<body>
+<div id="div1">div</div>
+<ul>
+	<li>111</li>
+	<li>111</li>
+	<li>111</li>
+
+	<li>111</li>
+</ul>
+
+
+</body>
+</html>

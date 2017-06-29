@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery方法</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+#div1{width: 100px;height: 100px;background: yellow;}
+
+
+</style>
+<script type="text/javascript">
+//animate();  第一个参数：{} 运动的值和属性
+//		第二个参数：时间   默认时间400毫秒
+//		第三个参数：运动形式 只有两种 （默认：swing(慢快慢)    linear(匀速)）
+//		第四个参数：回调函数
+
+
+	
+//stop():阻止当前运动
+//stop(ture):阻止后续运动
+//stop( ture,ture)  可以立即停止到指定的目标点
+//finish();立即停止到指定的目标点
+
+
+//delegate():时间委托
+//undelegate():阻止时间委托
+//trigger(事件)：主动触发
+
+
+//ev.data 当前时间数据
+//ev.target :当前操作的时间元素
+//ev.type :当前时间的是事件类型
+$(function(){
+	$('#div1').click(function(){
+		$(this).animate({width:300,height:300},4000,'linear', function(){
+			alert(123);
+		});
+	})
+
+	$('#div1').click(function(){
+		$(this).animate({width:300},4000,'linear', function(){
+			$(this).animate({height:300});
+		});
+	})
+
+	$('#div1').click(function(){
+		$(this).animate({width:300},4000,'linear').animate({height:300},2000);		
+	})//等同于上面的写法
+
+
+
+	
+	
+	$('li').on('click',function(){
+		this.style.background = "red";
+	})
+
+	$('ul').delegeate('li','click',function(){
+		this.style.background = "red";
+
+	})//同上
+
+
+	$('#div').on('click',{name:'hello'},function(ev){
+		alert(ev.data.name);
+	})
+
+
+
+
+
+})
+</script>
+<body>
+<div id="div1">div</div>
+<ul>
+	<li>111</li>
+	<li>111</li>
+	<li>111</li>
+
+	<li>111</li>
+</ul>
+
+
+</body>
+</html>

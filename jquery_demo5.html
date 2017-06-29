@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery$()方法2</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<script type="text/javascript">
+$(function(){
+	// 	1.addClass():添加class
+	// 	2.removeClass():移除。。
+	// $('div').addClass('box3 box4');
+	
+
+
+	// 	3.width():  /height同理   
+	// 	4.innerWidth():  width+padding
+	// 	5.outerWidth(): width+padding+border 
+	// 	   outerWidth(true): width+padding+border+margin
+
+	//	6.insertAfter():
+	//	7.after():
+	//	8.appendTo():  =appendchild
+	//	9.append():
+	//	10.prependTo():
+	//	11.prepend():
+	//	12.remove(): 删除节点
+	//	13.on():  自定义事件
+	//	14.off(): 取消事件
+	//	15.scrollTop(): 滚动距离
+
+	// $('span').insertBefore( $('div') );//将span放到div的前面 原生有
+	// $('div').insertAfter( $('span') );//将div放到span的后面
+	// $('div').appendTo( $('span') );//将div放到span的里面的最开始的位置 原生没有
+	// $('div').prependTo( $('span') );//将div放到span的里面的最开始的位置
+
+	$('div').on('click mouseover',function(){
+		alert(123);//鼠标移入和移除都能触发事件
+		$('div').off(); //解除所有在div中的事件
+	})
+
+	$('div').on({
+		'click':function(){
+			alert(123);
+		};
+		'mouseover':function(){
+			alert(456);
+		};
+		$('div').off('mouseover');//解除鼠标移除事件
+	})
+
+	$(document).click(function(){
+		alert( $(window).scrollTop() );//鼠标点击后弹出屏幕滚动距离
+	})
+
+})
+</script>
+<body style="height: 2000px;">
+<!-- <div class="box1 box2">div</div> -->
+
+<div>div</div>
+<span>span</span>	
+
+</body>
+</html>

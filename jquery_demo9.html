@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery方法</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+#div1{width: 100px;height: 100px;background: yellow;}
+#div2{width: 100px;height: 100px;background: red;}
+
+</style>
+<script type="text/javascript">
+$(function(){
+	//hover:鼠标移入移出
+	$('div1').hover(function(){
+		$(this).css("background",'blue');//鼠标移入
+
+	},function(){
+		$(this).css('background','red');//鼠标移出
+	})
+	//hide();显示  hide(1000);运动效果  1秒内隐藏
+	//show();隐藏
+	//fadeOut();淡出
+	//fadeIn();淡入
+	//slideUp();向上卷曲
+	//slideDown()：向下展开
+	//fadeTo(1000.0.8):时间  透明度
+})
+</script>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+
+	
+
+</body>
+</html>
+

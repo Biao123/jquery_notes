@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery事件细节</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+#div1{ width: 200px; height: 200px;background: red; overflow: hidden; margin: 20px; }
+#div2{width: 100px;height: 100px;background: yellow; margin:30px;}
+
+</style>
+<script type="text/javascript">
+$(function(){
+	 // $('div').click(function(ev){
+	 // 	//	1.ev:event对象  //鼠标位置
+	 // 	// 	2.ev.pageX(相对于文档的) :  clientX(相对于可视区得)
+	 // 	//	3.ev.which : heyCode  //键盘的键值
+	 // 	//	4.ev.preventDefault():  阻止默认事件
+	 // 	//	5.ev.stopPropagation():  阻止冒泡的操作
+
+	 // 	//	6.return false ;  阻止默认事件+阻止冒泡的操作
+
+
+	 // })
+		// $('div').one('click',function(){ 
+		//	7.one():只执行一次
+		// 	alert(123);
+	 		
+	 // 	})
+	 
+
+
+	//div2.offsetLeft
+	alert($('#div2').offset().left);
+	// 	8 . offset():获取元素到屏幕的距离
+	//	9.position() : 到有定位的父级的距离
+	//	10.parent(): 获取父级
+	//	11.offsetParent():获取有定位的父级
+		
+	//	12.val():获取元素的value值
+	//	13.size():获取一组元素长度
+	//	14.each():类似原生for循环的加强版
+	 $("li").each(function(i,elem){ 
+	 	$(elem).html(i);
+
+	 });
+
+
+})
+</script>
+<body  >
+<div id="div1">
+	<div id="div2"></div>
+</div>
+
+	
+
+</body>
+</html>

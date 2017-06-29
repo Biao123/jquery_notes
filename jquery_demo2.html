@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_demo1</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<script type="text/javascript">
+
+
+
+ // $(function() {
+ // 	$("#div1").click( function() {
+ // 		alert( $( this ).html() ) //jq的写法
+ // 		alert( this.innerHTML ) //js
+ // 		// 写法之间不能混搭
+ // 	} )
+ // } )
+ 
+// 链式操作
+ // $( function(){
+ // 	// var div = $( "#div1" );
+ // 	// div.html("hello");
+ // 	// div.css("background","red");
+ // 	// div.click( function(){
+ // 	// 	alert(123);
+ // 	// })
+ 
+ // 	$("#div1").html("hello").css("background","red").click( function(){
+ // 		alert(123);
+ // 	})
+ // })
+
+
+
+$( function(){
+		// $("#div1").html("hello"); //赋值
+		// alert( $('#div').html() )  //取值
+
+		alert( $('li').html() ) ;//当一组元素的时候，取值是一组中的第一个
+		$( "li" ).html('hello');//当一组元素时候，赋值是一组中的所有元素
+
+})
+
+
+
+
+</script>
+<body>
+<div id="div1">div</div>
+<ul>
+	<li>aaa</li>
+	<li>bbb</li>
+	<li>ccc</li>
+	<li>ddd</li>
+
+</ul>
+	
+</body>
+</html>

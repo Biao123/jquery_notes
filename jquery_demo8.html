@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery拖拽</title>
+	<script type="text/javascript" src="jquery-1.7.2.js"></script>
+</head>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+div{width: 100px;height: 100px;position: absolute;background: red;}
+
+
+</style>
+<script type="text/javascript">
+$(function(){
+	var disx = 0;
+	var disy = 0;
+	$('div').mousedown( function(ev){
+
+		disx = ev.pageX - $(this).offset().left;
+		disy = ev.pageY - $(this).offset().top;
+
+		$(document).mousemove(function(ev){
+
+			$('div').css('left', ev.pageX - disx);
+			$('div').css('top', ev.pageY - disy);
+		});
+
+		$(document).mouseup(function(){
+
+			$(document).off();
+
+		});
+		return false;
+	})
+
+
+
+})
+</script>
+<body>
+<div></div>
+
+	
+
+</body>
+</html>
